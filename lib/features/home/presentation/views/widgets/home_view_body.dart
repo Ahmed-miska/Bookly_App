@@ -26,8 +26,51 @@ class HomeViewBody extends StatelessWidget {
             'Best Seller',
             style: Styles.titleMedium,
           ),
+          BestSellerItem()
         ],
       ),
+    );
+  }
+}
+
+class BestSellerItem extends StatelessWidget {
+  const BestSellerItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Image(
+          image: AssetImage(AssetData.testimage),
+          height: 130,
+        ),
+        Spacer(),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'The Jungle Book',
+              style: Styles.head1Title,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Text(
+                'Rudary Kubaling',
+                style: Styles.head2title,
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  '19.99 &  ',
+                  style: Styles.priceStyle,
+                ),
+                Text('@ 4.8 (2390)')
+              ],
+            ),
+          ],
+        )
+      ],
     );
   }
 }
