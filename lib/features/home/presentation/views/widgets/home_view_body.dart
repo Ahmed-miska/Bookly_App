@@ -1,3 +1,4 @@
+import 'package:bookly/constant.dart';
 import 'package:bookly/core/ulits/assets.dart';
 import 'package:bookly/core/ulits/styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Styles.titleMedium,
+            style: Styles.textStyle18,
           ),
           BestSellerItem()
         ],
@@ -38,39 +39,51 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image(
-          image: AssetImage(AssetData.testimage),
-          height: 130,
-        ),
-        Spacer(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'The Jungle Book',
-              style: Styles.head1Title,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Text(
-                'Rudary Kubaling',
-                style: Styles.head2title,
+    return SizedBox(
+      height: 120,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(
+                    AssetData.testimage,
+                  ),
+                ),
               ),
             ),
-            Row(
-              children: [
-                Text(
-                  '19.99 &  ',
-                  style: Styles.priceStyle,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'The Jungle Book',
+                style: Styles.textStyle20,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Text(
+                  'Rudary Kubaling',
+                  style: Styles.textStyle16,
                 ),
-                Text('@ 4.8 (2390)')
-              ],
-            ),
-          ],
-        )
-      ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    '19.99 &  ',
+                    style: Styles.textStyle18,
+                  ),
+                  Text('@ 4.8 (2390)')
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
