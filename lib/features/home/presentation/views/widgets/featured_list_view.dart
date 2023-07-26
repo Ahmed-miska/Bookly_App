@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'custom_list_view_item.dart';
+import 'custom_book_item.dart';
 
 class FeaturedBooksList extends StatelessWidget {
   const FeaturedBooksList({Key? key}) : super(key: key);

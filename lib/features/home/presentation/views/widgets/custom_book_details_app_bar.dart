@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
   const CustomBookDetailsAppBar({Key? key}) : super(key: key);
@@ -10,13 +11,18 @@ class CustomBookDetailsAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
           icon: Icon(
             Icons.close,
           ),
         ),
-        Icon(
-          Icons.shopping_cart_outlined,
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.shopping_cart_outlined,
+          ),
         ),
       ],
     );
