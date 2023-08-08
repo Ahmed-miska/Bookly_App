@@ -2,6 +2,7 @@ import 'package:bookly/core/ulits/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'best_seller_list_view.dart';
 import 'best_seller_list_view_item.dart';
 import 'custom_app_bar.dart';
 import 'featured_list_view.dart';
@@ -12,6 +13,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
@@ -28,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
-                  'Best Seller',
+                  'Newset Books',
                   style: Styles.textStyle18,
                 ),
               ),
@@ -45,26 +47,6 @@ class HomeViewBody extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerListViewItem(),
-        );
-      },
     );
   }
 }

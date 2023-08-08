@@ -1,13 +1,16 @@
+import 'package:bookly/core/ulits/custom_error_widget.dart';
+import 'package:bookly/core/widgets/custom_loading_indcator.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/features/home/presentation/manger/newset_books_cubit/newset_books_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/ulits/custom_error_widget.dart';
-import '../../../../../core/widgets/custom_loading_indcator.dart';
-import '../../../../home/presentation/manger/newset_books_cubit/newset_books_cubit.dart';
-import '../../../../home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'best_seller_list_view_item.dart';
 
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({Key? key}) : super(key: key);
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
