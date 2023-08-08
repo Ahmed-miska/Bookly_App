@@ -3,8 +3,9 @@ import 'package:flutter/cupertino.dart';
 import '../../../../../core/ulits/assets.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
-  const FeaturedListViewItem({Key? key}) : super(key: key);
-
+  const FeaturedListViewItem({Key? key, required this.imageUrl})
+      : super(key: key);
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -14,8 +15,8 @@ class FeaturedListViewItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(
-              AssetData.testimage,
+            image: NetworkImage(
+              imageUrl,
             ),
           ),
         ),
