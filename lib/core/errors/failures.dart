@@ -33,7 +33,7 @@ class ServerFailure extends Failure {
           return ServerFailure('No Internet Connection');
         }
         return ServerFailure('Unexpected Error, Please try again');
-      default:
+        default:
         return ServerFailure('Opps There was an error ,Please try again');
     }
   }
@@ -45,7 +45,10 @@ class ServerFailure extends Failure {
       return ServerFailure('Your request not found, Please try later');
     } else if (statusCode == 500) {
       return ServerFailure('Internal Server error, Please try later');
-    } else {
+    } 
+    else if (statusCode == 429) {
+      return ServerFailure('Too Many Requests This time ,Please try again later');
+    }else {
       return ServerFailure('Opps There was an error, Please try again');
     }
   }
