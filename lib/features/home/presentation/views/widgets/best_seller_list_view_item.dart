@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../constant.dart';
-import '../../../../../core/ulits/assets.dart';
 import '../../../../../core/ulits/styles.dart';
 import 'book_rating.dart';
 
@@ -17,7 +16,7 @@ class BestSellerListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel);
       },
       child: SizedBox(
         height: 120,
